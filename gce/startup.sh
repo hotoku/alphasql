@@ -14,3 +14,14 @@ apt install -y pkg-config zip g++ zlib1g-dev unzip python3 openjdk-8-jdk
 wget https://github.com/bazelbuild/bazel/releases/download/1.0.0/bazel-1.0.0-installer-linux-x86_64.sh
 chmod u+x bazel-1.0.0-installer-linux-x86_64.sh
 ./bazel-1.0.0-installer-linux-x86_64.sh 2>&1 | tee /hotoku/bazel.log
+
+## bazelisk
+apt install -y nodejs npm
+npm i -g @bazel/bazelisk
+
+## zsh
+apt install -y zsh
+su - hotoku
+yes | sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+exit
+chsh -s /bin/sh
