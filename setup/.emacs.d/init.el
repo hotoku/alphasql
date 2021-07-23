@@ -38,6 +38,13 @@
       (write-region (point-min) (point-max) path))))
 
 
+;;; use-package initialize
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t) ; automatically install missing packages
+
+
 
 
 (custom-set-variables
