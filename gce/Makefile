@@ -4,4 +4,6 @@ create-instance:
 
 .PHONY:
 image:
-	packer build --var image-suffix=$$(date "+%Y-%m-%d-%H-%M-%S") .
+	$(eval SUFFIX := $(shell date "+%Y-%m-%d--%H-%M-%S"))
+	@echo SUFFIX=$(SUFFIX)
+	packer build --var image-suffix=$(SUFFIX) .
