@@ -1,7 +1,9 @@
 #!/bin/bash
 
+USER=hotoku
+
 # shell
-chsh -s zsh
+sudo chsh -s /bin/zsh ${hotoku}
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # dot
