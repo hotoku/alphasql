@@ -3,10 +3,10 @@
 mkdir /hotoku
 echo $(date) >> /hotoku/startup
 echo $(whoami) >> /hotoku/startup
-echo $(pwd) >> hotoku/startup
+echo $(pwd) >> /hotoku/startup
 
 apt update
-apt install -y python3 python3-pip emacs
+apt install -y python3 python3-pip emacs zsh
 
 ## bazel
 # cf: https://docs.bazel.build/versions/1.0.0/install-ubuntu.html
@@ -18,10 +18,3 @@ chmod u+x bazel-1.0.0-installer-linux-x86_64.sh
 ## bazelisk
 apt install -y nodejs npm
 npm i -g @bazel/bazelisk
-
-## zsh
-apt install -y zsh
-su - hotoku
-yes | sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-exit
-chsh -s /bin/sh
