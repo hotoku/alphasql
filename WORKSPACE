@@ -6,7 +6,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "com_google_zetasql",
-    commit = "2020.03.2",
+    tag = "2021.03.2",
     remote = "https://github.com/google/zetasql"
 )
 
