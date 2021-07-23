@@ -1,15 +1,16 @@
 #!/bin/bash
 
-USER=hotoku
+LINUX_USER=hotoku
+GITHUB_USER=hotoku
 
 # shell
-sudo chsh -s /bin/zsh ${hotoku}
+sudo chsh -s /bin/zsh ${LINUX_USER}
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # dot
-mkdir -p ~/projects/hotoku
-cd ~/projects/hotoku
-git clone git@github.com:hotoku/dot
-ln -s ~/projects/hotoku/dot/gitconfig ~/.gitconfig
-ln -s ~/projects/hotoku/dot/tmux.basic.conf ~/.tmux.conf
+mkdir -p ~/projects/${GITHUB_USER}
+cd $_
+git clone git@github.com:${GITHUB_USER}/dot
+ln -s ~/projects/${GITHUB_USER}/dot/gitconfig ~/.gitconfig
+ln -s ~/projects/${GITHUB_USER}/dot/tmux.basic.conf ~/.tmux.conf
 cd ~
