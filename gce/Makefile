@@ -1,4 +1,4 @@
-.PHONY:
+.PHONY: create-instance
 create-instance:
 	./create-instance $(IMAGE_NAME)
 
