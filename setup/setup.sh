@@ -5,7 +5,7 @@ GITHUB_USER=hotoku
 
 # shell
 sudo chsh -s /bin/zsh ${LINUX_USER}
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+yes y | sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # dot
 mkdir -p ~/projects/${GITHUB_USER}
