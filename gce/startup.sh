@@ -13,17 +13,6 @@ wget https://github.com/sharkdp/fd/releases/download/v8.2.1/fd_8.2.1_amd64.deb
 dpkg -i fd_8.2.1_amd64.deb
 snap install --classic ripgrep
 
-## emacs
-apt install -y libgnutls28-dev libtinfo-dev
-wget -O /startup/emacs-27.2.tar.xz https://ftp.gnu.org/gnu/emacs/emacs-27.2.tar.xz
-cd /startup
-tar xJvf emacs-27.2.tar.xz
-cd emacs-27.2
-./configure --with-x-toolkit=no --with-xpm=ifavailable --with-jpeg=ifavailable --with-png=ifavailable --with-gif=ifavailable --with-tiff=ifavailable --with-gnutls=ifavailable
-make -j16
-make -j16 install
-cd /
-
 ## bazel
 # cf: https://docs.bazel.build/versions/1.0.0/install-ubuntu.html
 apt install -y pkg-config zip g++ zlib1g-dev unzip python3 openjdk-8-jdk
@@ -34,3 +23,14 @@ chmod u+x bazel-1.0.0-installer-linux-x86_64.sh
 ## bazelisk
 apt install -y nodejs npm
 npm i -g @bazel/bazelisk
+
+## emacs
+apt install -y libgnutls28-dev libtinfo-dev
+wget -O /startup/emacs-27.2.tar.xz https://ftp.gnu.org/gnu/emacs/emacs-27.2.tar.xz
+cd /startup
+tar xJvf emacs-27.2.tar.xz
+cd emacs-27.2
+./configure --with-x-toolkit=no --with-xpm=ifavailable --with-jpeg=ifavailable --with-png=ifavailable --with-gif=ifavailable --with-tiff=ifavailable --with-gnutls=ifavailable
+make -j16
+make -j16 install
+cd /
