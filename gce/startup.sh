@@ -5,8 +5,12 @@ echo $(date) >> /startup/log
 echo $(whoami) >> /startup/log
 echo $(pwd) >> /startup/log
 
+## basic utils
 apt update
-apt install -y python3 python3-pip zsh fdclone direnv clangd-10
+apt install -y python3 python3-pip zsh direnv clangd-10
+ln -s /usr/bin/clangd-10 /usr/bin/clangd
+wget https://github.com/sharkdp/fd/releases/download/v8.2.1/fd_8.2.1_amd64.deb
+dpkg -i fd_8.2.1_amd64.deb
 snap install --classic ripgrep
 
 ## emacs
