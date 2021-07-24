@@ -6,7 +6,8 @@ echo $(whoami) >> /startup/log
 echo $(pwd) >> /startup/log
 
 apt update
-apt install -y python3 python3-pip zsh
+apt install -y python3 python3-pip zsh fdclone direnv clangd-10
+snap install --classic ripgrep
 
 ## emacs
 apt install -y libgnutls28-dev libtinfo-dev
