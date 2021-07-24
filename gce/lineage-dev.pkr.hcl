@@ -19,6 +19,7 @@ source "googlecompute" "lineage-dev" {
   zone                = "asia-northeast1-b"
   startup_script_file = "startup.sh"
   image_name          = "lineage-dev-${var.image-suffix}"
+  machine_type        = "c2-standard-16"
 }
 
 build {

@@ -1,12 +1,23 @@
 #!/bin/bash
 
-mkdir /hotoku
-echo $(date) >> /hotoku/startup
-echo $(whoami) >> /hotoku/startup
-echo $(pwd) >> /hotoku/startup
+mkdir /startup
+echo $(date) >> /startup/log
+echo $(whoami) >> /startup/log
+echo $(pwd) >> /startup/log
 
 apt update
-apt install -y python3 python3-pip emacs zsh
+apt install -y python3 python3-pip zsh
+
+## emacs
+apt install -y libgnutls28-dev libtinfo-dev
+wget -O /startup/emacs-27.2.tar.xz https://ftp.gnu.org/gnu/emacs/emacs-27.2.tar.xz
+cd /startup
+tar xJvf emacs-27.2.tar.xz
+cd emacs-27.2
+./configure --with-x-toolkit=no --with-xpm=ifavailable --with-jpeg=ifavailable --with-png=ifavailable --with-gif=ifavailable --with-tiff=ifavailable
+make
+make install
+cd /
 
 ## bazel
 # cf: https://docs.bazel.build/versions/1.0.0/install-ubuntu.html
