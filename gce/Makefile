@@ -8,4 +8,4 @@ image:
 	@if [[ $$(git st -s | wc -l) -ge 1 ]]; then echo "Error: local tree is dirty."; false; fi
 	$(eval SUFFIX := $(shell git rev-parse HEAD))
 	@echo SUFFIX=$(SUFFIX)
-	@echo packer build --var image-suffix=$(SUFFIX) .
+	packer build --var image-suffix=$(SUFFIX) .
