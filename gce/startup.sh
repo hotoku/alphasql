@@ -15,7 +15,7 @@ cd /startup
 tar xJvf emacs-27.2.tar.xz
 cd emacs-27.2
 ./configure --with-x-toolkit=no --with-xpm=ifavailable --with-jpeg=ifavailable --with-png=ifavailable --with-gif=ifavailable --with-tiff=ifavailable
-make
+make -j16
 make install
 cd /
 
