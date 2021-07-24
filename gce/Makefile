@@ -5,6 +5,7 @@ create-instance:
 
 .PHONY:
 image:
-	$(eval SUFFIX := $(shell date "+%Y-%m-%d--%H-%M-%S"))
-	@echo SUFFIX=$(SUFFIX)
-	packer build --var image-suffix=$(SUFFIX) .
+	@if [[ $$(git st -s | wc -l) -ge 1 ]]; then echo "Error: local tree is dirty."; false; fi
+	# $(eval SUFFIX := $(shell date "+%Y-%m-%d--%H-%M-%S"))
+	# @echo SUFFIX=$(SUFFIX)
+	# packer build --var image-suffix=$(SUFFIX) .
