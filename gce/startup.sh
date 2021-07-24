@@ -21,7 +21,7 @@ tar xJvf emacs-27.2.tar.xz
 cd emacs-27.2
 ./configure --with-x-toolkit=no --with-xpm=ifavailable --with-jpeg=ifavailable --with-png=ifavailable --with-gif=ifavailable --with-tiff=ifavailable --with-gnutls=ifavailable
 make -j16
-make install
+make -j16 install
 cd /
 
 ## bazel
