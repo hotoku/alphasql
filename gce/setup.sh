@@ -13,4 +13,10 @@ cd $_
 git clone git@github.com:${GITHUB_USER}/dot
 ln -s ~/projects/${GITHUB_USER}/dot/gitconfig ~/.gitconfig
 ln -s ~/projects/${GITHUB_USER}/dot/tmux.basic.conf ~/.tmux.conf
+ln -s ~/projects/${GITHUB_USER}/dot/.zshrc ~/.zshrc
 cd ~
+
+# .emacs
+cd ~/projects/${GITHUB_USER}
+git clone git@github.com:${GITHUB_USER}/dot-emacs
+ln -s ~/projects/${GITHUB_USER}/dot-emacs ~/.emacs.d
